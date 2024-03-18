@@ -1,0 +1,48 @@
+.example-card {
+  width: 90%;;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.example-card-header {
+  background-color: #1976D2;
+  color: white;
+  padding: 10px;
+}
+
+.example-card-title {
+  font-size: 18px;
+}
+
+.example-card-image {
+  max-height: 200px;
+}
+
+.example-card-content {
+  padding: 10px;
+}
+
+.example-card-actions {
+  justify-content: flex-end;
+}
+
+.container-card{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.custom-card-header {
+  background-color: #3F51B5;
+  color: white;
+  padding: 10px;
+}
+
+.login-button {
+  margin: 14px 4px -16px 0px;
+}
+
+.container-table{
+  width: 100%;
+  overflow-x: scroll;
+}

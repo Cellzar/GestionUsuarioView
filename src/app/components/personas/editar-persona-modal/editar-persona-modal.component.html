@@ -1,0 +1,53 @@
+<h2 mat-dialog-title><mat-icon>person</mat-icon> Editar Persona</h2>
+<hr>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="personaForm">
+    <div class="form-container">
+      <div class="form-column">
+        <mat-form-field appearance="outline" class="custom-mat-form-field">
+          <mat-label>Tipo de Identificación</mat-label>
+          <mat-select formControlName="tipoIdentificacion" placeholder="Tipo de Identificación">
+            <mat-option *ngFor="let tipo of datosUsuario.tipoIdentificacion" [value]="tipo.nombre">{{ tipo.nombre }}</mat-option>
+          </mat-select>
+
+          <mat-error *ngIf="personaForm.get('tipoIdentificacion')?.hasError('required')">El tipo de identificación es requerido</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="custom-mat-form-field">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" placeholder="Nombre">
+          <mat-error *ngIf="personaForm.get('nombre')?.hasError('required')">El nombre es requerido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-column">
+
+        <mat-form-field appearance="outline" class="custom-mat-form-field">
+          <mat-label>Identificación</mat-label>
+          <input matInput formControlName="identificacion" placeholder="Identificación">
+          <mat-error *ngIf="personaForm.get('identificacion')?.hasError('required')">La identificación es requerida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-mat-form-field">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="apellido" placeholder="Apellido">
+          <mat-error *ngIf="personaForm.get('apellido')?.hasError('required')">El apellido es requerido</mat-error>
+        </mat-form-field>
+
+
+      </div>
+
+    </div>
+    <mat-form-field appearance="outline" class="custom-mat-form-field">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Email" class="full-width">
+      <mat-error *ngIf="personaForm.get('email')?.hasError('required')">El email es requerido</mat-error>
+    </mat-form-field>
+    <button mat-button mat-dialog-close mat-raised-button color="primary"  [disabled]="!this.personaForm.valid" (click)="editar()"> <mat-icon>edit</mat-icon> Editar</button>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+
+  <button mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>

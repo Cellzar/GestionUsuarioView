@@ -1,0 +1,24 @@
+<div class="container-card">
+  <mat-card class="example-card">
+    <mat-card-header class="custom-card-header">
+      <mat-card-title class="example-card-title">
+        <mat-icon>person</mat-icon> Gestión de Personas
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <button mat-raised-button color="primary" class="login-button" (click)="openCrearPersonaModal()">
+          <mat-icon>add</mat-icon>
+          Crear Persona
+        </button>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="container-table">
+        <app-tabla-personas [tipoIdentificacion]="listTipoDocumento"></app-tabla-personas>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+

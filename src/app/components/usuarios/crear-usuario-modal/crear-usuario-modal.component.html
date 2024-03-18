@@ -1,0 +1,25 @@
+<h2 mat-dialog-title><mat-icon>person</mat-icon> Crear Usuario</h2>
+<hr>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="usuarioForm">
+
+    <mat-form-field appearance="outline" class="custom-mat-form-field">
+      <mat-label>Usuario</mat-label>
+      <input matInput formControlName="usuarioNombre" placeholder="Usuario de nombre" class="full-width">
+      <mat-error *ngIf="usuarioForm.get('usuarioNombre')?.hasError('required')">El usuario es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="custom-mat-form-field">
+      <mat-label>Contraseña</mat-label>
+      <input matInput formControlName="pass" placeholder="Contraseña" class="full-width" matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="usuarioForm.get('pass')?.hasError('required')">La contraseña es requerida</mat-error>
+    </mat-form-field>
+    <button mat-button mat-dialog-close mat-raised-button color="primary"  [disabled]="!this.usuarioForm.valid" (click)="guardarUsuario()"> <mat-icon>save</mat-icon> Guardar</button>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+
+  <button mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>

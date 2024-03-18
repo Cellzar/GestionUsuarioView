@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <button mat-button routerLink="/gestion">
+    <mat-icon>menu_book</mat-icon>
+    <span>Gestión Usuarios</span>
+  </button>
+
+  <span class="spacer"></span>
+  <button mat-button routerLink="/gestion/usuarios">
+    <mat-icon>people</mat-icon> Usuarios
+  </button>
+  <button mat-button routerLink="/gestion/personas">
+    <mat-icon>person</mat-icon> Personas
+  </button>
+  <button mat-icon-button  class="logout-button" (click)="cerrarSesion()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container-router">
+  <router-outlet></router-outlet>
+</div>

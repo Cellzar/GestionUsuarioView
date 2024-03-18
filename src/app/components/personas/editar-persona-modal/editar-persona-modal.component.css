@@ -1,0 +1,28 @@
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mat-mdc-dialog-title {
+  background-color: #3F51B5;
+  color: white;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-column {
+  flex: 1;
+}
+
+.custom-mat-form-field {
+  width: 100%;
+  margin: 5px 0px;
+}
+
+.full-width {
+  width: 100%;
+}

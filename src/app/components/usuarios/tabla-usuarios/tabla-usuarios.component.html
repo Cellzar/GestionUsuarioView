@@ -1,0 +1,38 @@
+<div class="table-container">
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let col of displayedColumns" [matColumnDef]="col">
+      <th mat-header-cell *matHeaderCellDef>{{ col | titlecase }}</th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <ng-container *ngIf="col !== 'acciones' && col !== 'fechaCreacion'; else accionesTemplate">
+          {{ element[col] }}
+        </ng-container>
+        <ng-template #accionesTemplate>
+          <ng-container *ngIf="col !== 'acciones'; else accionesButtons">
+            {{ element[col] | date: 'yyyy-MM-dd' }}
+          </ng-container>
+          <ng-template #accionesButtons>
+            <div class="action-buttons">
+              <button mat-icon-button color="primary" (click)="editUsuario(element)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="confirmarBorrado(element.identificador)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </ng-template>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

@@ -1,0 +1,47 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #69696921;
+}
+
+.login-card {
+  width: 350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.login-button {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+
+.login-header{
+  background-color: hsl(231, 48%, 48%);
+  color: white;
+  height: 40px;
+  text-align: center;
+}
+
+.card-container{
+  margin: 10px 0;
+}
