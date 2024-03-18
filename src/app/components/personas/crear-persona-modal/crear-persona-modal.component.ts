@@ -41,8 +41,10 @@ export class CrearPersonaModalComponent {
       nuevaPersona.email =  this.personaForm.value.email;
 
       this.personaService.createPersona(nuevaPersona).subscribe((rest) => {
-        if(rest.ok){
+        if(rest.mensaje == 'Persona creado correctamente'){
           Swal.fire('Exito', rest.mensaje, 'success');
+        }else{
+          Swal.fire('Advertencia', rest.mensaje, 'warning');
         }
 
         this.personaService.getPersonas().subscribe((res) => {
